@@ -1,0 +1,18 @@
+﻿{
+    "name":  "phishing-website-detection-system",
+    "version":  "1.0.0",
+    "description":  "PhishGuard cybersecurity project with a JavaScript server and phishing URL analyzer.",
+    "main":  "server.js",
+    "scripts":  {
+                    "start":  "node server.js",
+                    "dev":  "node server.js"
+                },
+    "keywords":  [
+                     "cybersecurity",
+                     "phishing",
+                     "url-analysis",
+                     "web-security"
+                 ],
+    "author":  "",
+    "license":  "MIT"
+}

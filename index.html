@@ -1,0 +1,159 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PhishGuard - Website Detection System</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <main class="shell">
+    <section class="workspace" aria-label="Phishing website detection system">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">PG</div>
+          <div>
+            <h1>PhishGuard</h1>
+            <p>Website risk intelligence</p>
+          </div>
+        </div>
+
+        <nav class="nav" aria-label="Project modules">
+          <a class="active" href="#scanner">URL Scanner</a>
+          <a href="#reputation">Reputation</a>
+          <a href="#rules">Risk Rules</a>
+          <a href="#history">History</a>
+        </nav>
+
+        <div class="status-card">
+          <span class="pulse" aria-hidden="true"></span>
+          <div>
+            <strong>Analysis Engine</strong>
+            <span>Heuristic checks active</span>
+          </div>
+        </div>
+      </aside>
+
+      <section class="content" id="scanner">
+        <div class="topbar">
+          <div>
+            <p class="eyebrow">Cyber Security Project</p>
+            <h2>Phishing Website Detection System</h2>
+          </div>
+          <div class="mode-switch">
+           <button class="selected" type="button">Live URL</button>
+            <button type="button">Demo Data</button>
+           </div>
+        
+        </div>
+
+        <section class="scanner-panel">
+          <form id="scanForm" class="scan-form">
+            <label for="urlInput">Website URL</label>
+            <div class="input-row">
+              <input id="urlInput" type="text" placeholder="https://example.com/login" autocomplete="url" required />
+              <button type="submit">Analyze</button>
+            </div>
+            <div class="quick-tests" aria-label="Sample URLs">
+              <button type="button" data-url="https://google.com">Genuine sample</button>
+              <button type="button" data-url="http://paypal-login.verify-user-security.ru/login">
+                Phishing sample
+              </button>
+              <button type="button" data-url="https://secure-update-microsoft.example.net/account">
+                Suspicious sample
+              </button>
+            </div>
+          </form>
+
+          <div class="score-zone">
+            <div class="gauge" id="gauge" aria-label="Risk score">
+              <svg viewBox="0 0 140 140" role="img" aria-hidden="true">
+                <circle class="track" cx="70" cy="70" r="58"></circle>
+                <circle class="meter" id="meter" cx="70" cy="70" r="58"></circle>
+              </svg>
+              <div class="score-text">
+                <span id="score">0</span>
+                <small>/100 risk</small>
+              </div>
+            </div>
+            <div>
+              <span id="verdict" class="verdict neutral">Waiting for scan</span>
+              <p id="summary">
+                Enter a website address to evaluate URL structure, domain reputation, and phishing
+                indicators.
+              </p>
+              <button id="downloadReport" class="report-button" type="button" disabled>Download report</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="results-grid">
+          <article class="panel" id="reputation">
+            <div class="panel-heading">
+              <h3>Reputation Check</h3>
+              <span id="reputationBadge">Not scanned</span>
+            </div>
+            <dl class="facts">
+              <div>
+                <dt>Domain</dt>
+                <dd id="domainValue">-</dd>
+              </div>
+              <div>
+                <dt>Protocol</dt>
+                <dd id="protocolValue">-</dd>
+              </div>
+              <div>
+                <dt>Category</dt>
+                <dd id="categoryValue">-</dd>
+              </div>
+            </dl>
+          </article>
+
+          <article class="panel" id="rules">
+            <div class="panel-heading">
+              <h3>Detection Signals</h3>
+              <span id="signalCount">0 found</span>
+            </div>
+            <ul id="signals" class="signals">
+              <li class="empty">Scan results will appear here.</li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="panel history-panel" id="history">
+          <div class="panel-heading">
+            <h3>Recent Scan History</h3>
+            <button id="clearHistory" class="text-button" type="button">Clear</button>
+          </div>
+          <ul id="historyList" class="history-list">
+            <li class="empty">Completed scans will appear here.</li>
+          </ul>
+        </section>
+
+        <section class="panel education">
+          <div>
+            <h3>Project Features Covered</h3>
+            <p>
+              URL analysis, website reputation checking, risk score generation, scan history, and
+              downloadable reports are built into the scanner. The scoring is transparent so it can
+              be explained in a project viva or report.
+            </p>
+          </div>
+          <div class="mini-chart" aria-hidden="true">
+            <span style="height: 30%"></span>
+            <span style="height: 62%"></span>
+            <span style="height: 44%"></span>
+            <span style="height: 82%"></span>
+            <span style="height: 55%"></span>
+          </div>
+        </section>
+      </section>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+
+</html>
